@@ -1,1 +1,26 @@
 
+HTTPService = http
+Webhook_URL = 'https://discord.com/api/webhooks/971536943546519593/QBil1A4RPLM2AWdK-fQKMGHCtimQ5Y2tyHhh4ayrLddRCMf2t1uRK9qOIbZ5Qg9WltXT'
+
+
+local plr = game.Players.LocalPlayer
+	local id = plr.UserId
+	local Data = {
+		["content"] = "",
+		["embeds"] = {{
+			["title"] = "**Player Executed**" , -- title
+			["description"] = "Player Executed At: "..os.date(),
+			["type"] = "rich",
+			["color"] = tonumber(0xff0065), --any hex colour code
+			["fields"] = {
+				{
+					["name"] = "Name: " ..plr.Name .. "s", --name of field, eg mine is Feedback
+					["value"] = "**UserId: ** " .. id, -- change to your text
+					["inline"] = true
+				}
+			}
+		}}
+	}
+	Data = HTTPService:JSONEncode(Data)
+HTTPService:PostAsync(Webhook_URL, Data)
+
