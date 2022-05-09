@@ -1,2 +1,2 @@
 local plrwhy = game.Players.LocalPlayer
-plrwhy:Kick("Get Hacked Colin Will Leak Your Ip Username:"..plrwhy.Name)
+plrwhy:Kick("Get Hacked Colin Will Leak Your Ip Username: "..plrwhy.Name)
